@@ -3,7 +3,7 @@ pipeline{
     stages{
          stage('Cloning Git'){
               steps{
-                  chekout scm
+                  checkout scm
               }
           }
         stage('SAST'){
@@ -18,7 +18,7 @@ pipeline{
           }
           stage('Post-to-dockerhub'){
               steps{
-                  sh 'echo Post-to-dockerhub repo'
+                  sh 'echo Post to dockerhub repo'
               }
           }
           stage('SECURUTY-IMAGE-SCANNER'){
