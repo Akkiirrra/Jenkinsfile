@@ -7,7 +7,7 @@ node('agent01'){
         app = docker.build("Akkiirrra/pipeline")
     }
     stage('Post-to-dockerhub'){
-        docker.withRegistery('https://registry.hub.docker.com','dockerhub_login'){
+        docker.withRegistery('https://registry.hub.docker.com','dockerhub_creds'){
             app.push("latest")
         }
     }       
