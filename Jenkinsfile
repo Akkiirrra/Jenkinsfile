@@ -4,10 +4,10 @@ node('agent01'){
         checkout scm
     }
     stage('Build-and-Tag'){
-        app = docker.build("Akkiirrra/pipeline")
+        app = docker.build("akkiirrra/pipeline")
     }
     stage('Post-to-dockerhub'){
-        docker.withRegistery('https://registry.hub.docker.com','dockerhub_creds'){
+        docker.withRegistery('https://registry.hub.docker.com','dockerhub_login'){
             app.push("latest")
         }
     }       
